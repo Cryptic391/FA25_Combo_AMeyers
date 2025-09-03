@@ -4,7 +4,8 @@ public class Input_Play {
 	
 	public static Scanner input = new Scanner(System.in); 	//any method can use the scanner
 	
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		
 		nameAge();		//Runs the nameAge method with no parameters or returns
 		
