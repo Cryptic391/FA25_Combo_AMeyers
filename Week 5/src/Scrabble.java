@@ -6,12 +6,12 @@ public class Scrabble {
 	public static void main(String[] args) 
 	{
 		System.out.println("Enter 7 letters.");
-		String tiles = input.next();
+		String tiles = input.next();		//set tiles to 7 letters
 		System.out.println("Enter a word.");
-		String word = input.next();
+		String word = input.next();		//set word to the inputed word
 		
 		
-		if(canSpell(word, tiles))
+		if(canSpell(word, tiles))		//calls canSpell method and sends word and tiles
 		{
 			System.out.println("You can spell the word with the letters.");
 		}
@@ -23,43 +23,46 @@ public class Scrabble {
 	}
 	private static boolean canSpell(String word, String tiles) 
 	{
-		int len = word.length();
-		int count = 0;
+		int len = word.length();		//sets a integer to the length of word
+		int count = 0;		//sets count to 0
 				
-		if(word.length() > tiles.length())
+		if(word.length() > tiles.length())		//if the length of the word is greater than the number of tiles
 		{
-			return false;
+			return false;		//send false to if(canSpell)
 		}
 		else
 		{
-		
-			for (int i = 0; i < len; i++) 
+			char[] tileRay = tiles.toCharArray();
+			for (int i = 0; i < len; i++)		//loops a number of times equal to the length of word
 			{			
-				char letter = word.charAt(i);
+//				char letter = word.charAt(i);		//sets the letter to the letter at position i		
 			
-				for(int j = 0; j < len; j++)
+				for(int j = 0; j < len; j++)		//loops a number of times equal to the length of the word
 				{
-					char tile = tiles.charAt(j);
 					
-					if(tiles.charAt(j) == word.charAt(i))
+//					char tile = tiles.charAt(j);		//sets the tile to the letter at position j
+					
+					
+					if(word.charAt(i) == tileRay[j])		//if the character of tile j matches the character at word i
 					{
+						tileRay[j] = '*';
+						count++;		//add 1 to count
+//						System.out.println(count);			//print count (test)
 						
-						count++;
-						System.out.println(count);
 					}
 					
 					
 				}
 			}
-		if(count == word.length())
+		if(count == word.length())		//if the count equals the word length
 		{
 			
-			return true;
+			return true;	//send true
 		}
 		else
 		{
 			
-			return false;
+			return false;		//else send false
 		}
 		}
 		
