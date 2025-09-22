@@ -37,7 +37,7 @@ public class Scrabble {
 			{			
 //				char letter = word.charAt(i);		//sets the letter to the letter at position i	(not needed)	
 			
-				for(int j = 0; j < tiles.length(); j++)		//loops a number of times equal to the length of the word
+				for(int j = 0; j < tiles.length(); j++)		//loops a number of times equal to the length of the tiles
 				{
 					
 //					char tile = tiles.charAt(j);		//sets the tile to the letter at position j		(not needed)
