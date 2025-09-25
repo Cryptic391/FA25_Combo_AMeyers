@@ -8,11 +8,7 @@ public class Doubloon {
 	{
 		System.out.println("Enter a word and I will tell you if it is a Doubloon.");
 		String word = input.next();
-		word = word.toLowerCase();
-		
-		
-		
-		
+		word = word.toLowerCase();		
 		if(isDoubloon(word))
 		{
 			System.out.println("The word is a Doubloon.");
@@ -21,16 +17,11 @@ public class Doubloon {
 		{
 			System.out.println("The word is not a Doubloon.");
 		}
-		
-
-	}
-	
+	}	
 	
 	private static boolean isDoubloon(String word) 
 	{
-		int len = word.length();
-		
-		
+		int len = word.length();	
 		for (int i = 0; i < len; i++) 
 		{
 			int count = 0;
@@ -40,16 +31,13 @@ public class Doubloon {
 				if(word.charAt(j) == letter)
 				{
 					count++;
-				}
-				
+				}			
 			}
 			if(count != 2)
 			{
 				return false;
 			}
-		}
-		
+		}	
 		return true;
 	}
-
 }
