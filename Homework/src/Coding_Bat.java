@@ -22,7 +22,7 @@ public class Coding_Bat {
 	}
 
 	public static boolean endOther(String a, String b) {
-		int diff = Math.abs(a.length() - b.length());
+		
 		a.toLowerCase();
 		b.toLowerCase();
 		if (a.length() > b.length()) {
