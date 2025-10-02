@@ -5,39 +5,29 @@ public class Coding_Bat {
 	static Scanner input = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		String a = "Hiab";
-		String b = "ab";
-		a.toLowerCase();
-		b.toLowerCase();
-//		System.out.println(endOther(a, b));
-//		System.out.println(a.substring(b.length()-1,a.length()));
-		int diff = Math.abs(a.length()-b.length()-1);
-		System.out.println((a.substring(b.length()-diff,a.length())));
-		for(int i = 0; i<b.length();i++) {
-			if(b == (a.substring(b.length()-1,a.length())))
-			{
-				System.out.println("true");
-			}
-		}
-	}
 
-	public static boolean endOther(String a, String b) {
-		
-		a.toLowerCase();
-		b.toLowerCase();
-		if (a.length() > b.length()) {
-			for (int i = 0; i < a.length() - b.length(); i++)	
-			{
-
-			}
+		String str = "azbcppp";
+		String nStr = "";
+		if (str.length() < 3) {
+			System.out.println(str);
 		} 
 		else {
+			int a = str.indexOf("z");
+			int b = str.indexOf("p");
+			if (str.indexOf("z") < 0 && str.indexOf("p") < 0) {
+				System.out.println(str);
+			} else {
+				for (int i = 0; i < str.length() - 2; i++) {
+					if (str.charAt(i) == 'z' && str.charAt(i + 2) == 'p') {
+						nStr += "zp";
+						i += 2;
+					} else {
+						nStr += str.charAt(i);
+					}
 
-			for (int i = 0; i < b.length() - a.length(); i++)	
-			{
-
+				}
 			}
+			System.out.println(nStr);
 		}
-		return false;
 	}
 }
