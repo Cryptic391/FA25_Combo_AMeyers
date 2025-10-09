@@ -8,7 +8,6 @@ public class ArrayPlay {
 		int[] counts = {1,2,3,4,5};
 		double[] values;
 		String words[] = {"hello", "world", "goodbye", "cruel","big","bad","contentious"};
-		
 		int index = findWord(words,"big");
 				
 		System.out.printf("Found %s at index %d. %n", words[index], index);
