@@ -4,6 +4,8 @@ public class Character_Driver {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+		Character_Roller me = new Character_Roller();
+		System.out.println(me);
 		
 //		System.out.println("What is your character's name?");
 		String name = "bob";
@@ -27,12 +29,13 @@ public class Character_Driver {
 		monster.setArmorClass(15);
 		
 		Weapon ax = new Weapon("Ax",28);
-
-		bob.setWeapon("Ax",5);
-		System.out.println(bob.toString());
-		System.out.println();
-		System.out.println(monster);
 		
+		
+		bob.setWeapon("Ax",5);
+//		System.out.println(bob.toString());
+//		System.out.println();
+//		System.out.println(monster);
+
 	}
 
 }

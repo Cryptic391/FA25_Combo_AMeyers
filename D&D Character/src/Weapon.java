@@ -1,20 +1,19 @@
 
 public class Weapon {
 	private String name;
-	private int damageDie;
-	
+	private int damage;
 	
 	
 	public Weapon() {
-		super();
-		this.name = "";
-		this.damageDie = 0;
+		
+		this.name = null;
+		this.damage = 0;
 	}
 	
-	public Weapon(String name, int dmgDie) {
+	public Weapon(String name, int damage) {
 		super();
 		this.name = name;
-		this.damageDie = dmgDie;
+		this.damage = damage;
 	}
 
 	public String getName() {
@@ -25,17 +24,17 @@ public class Weapon {
 		this.name = name;
 	}
 
-	public int getDamageDie() {
-		return damageDie;
+	public int getDamage() {
+		return damage;
 	}
 
-	public void setDamageDie(int damageDie) {
-		this.damageDie = damageDie;
+	public void setDamage(int damage) {
+		this.damage = damage;
 	}
 
 	@Override
 	public String toString() {
-		return "Weapon Name: " + name + "\nDamage Die: " + damageDie;
+		return "Weapon Name: " + name + "\nDamage : " + damage;
 	}
 	
 	

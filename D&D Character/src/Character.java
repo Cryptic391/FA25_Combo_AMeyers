@@ -7,7 +7,6 @@ public class Character {
 	private Weapon weapon;
 	
 	
-	
 	public Character() {	//default constructor
 		super();
 		this.health = 0;
@@ -26,9 +25,6 @@ public class Character {
 	}
 	
 
-	
-	
-	
 	public Character(int health, String name, int strength, int armorClass, String wName, int wDamage) {
 		super();
 		this.health = health;
