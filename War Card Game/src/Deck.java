@@ -7,7 +7,6 @@ public class Deck {
 		this.cards = new Card[n];
 	}
 
-	
 	public Deck() {
 		this.cards = new Card[52];
 		int index =0;
@@ -18,7 +17,14 @@ public class Deck {
 			}
 		}
 	}
-	
+
+	public Deck subDeck(int low, int high) {
+		Deck sub = new Deck (high - low +1);
+		for (int i = 0; i < sub.cards.length; i++) {
+			sub.cards[i] = this.cards[low+i];
+		}
+		return sub;
+	}
 	
 	public Card[] getCards() {
 		return cards;
@@ -31,8 +37,7 @@ public class Deck {
 			 swap(i,randomInt(i,cards.length));
 		}
 	}
-	
-	
+		
 	private static int randomInt(int low, int high) {
 		Random rand = new Random();
 		int num = rand.nextInt(high-low)+low;
@@ -41,14 +46,12 @@ public class Deck {
 		return num;
 	}
 	
-	
 	private void swap(int i, int j) {
 		Card temp = cards[i];
 		cards[i] = cards[j];
 		cards[j] = temp;		
 	}
-	
-	
+		
 	public void printCards() {
 		int n = 0;
 		for(Card card : cards) {

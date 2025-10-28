@@ -12,11 +12,9 @@ public class Card {
 		this.suit = suit;
 	}
 
-
 	public boolean equals(Card that) {
 		return this.rank == that.rank && this.suit == that.suit;
 	}
-	
 	
 	public int compareTo(Card that) {
 		if(this.suit < that.suit) {
@@ -34,17 +32,14 @@ public class Card {
 		return 0;		
 	}
 
-	
 	public int getRank() {
 		return rank;
 	}
-
 
 	public int getSuit() {
 		return suit;
 	}
 
-	
 	@Override
 	public String toString() {
 		return ranks[this.rank] + " of " + suits[this.suit];
