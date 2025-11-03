@@ -1,3 +1,4 @@
+package code;
 
 public class Time {
 	private int hour;
@@ -70,8 +71,6 @@ public class Time {
 		}
 		return sum;
 	}
-	
-	
 	
 	
 	
