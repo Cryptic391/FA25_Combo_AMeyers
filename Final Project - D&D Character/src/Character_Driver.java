@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.swing.plaf.basic.BasicBorders.RolloverButtonBorder;
@@ -5,7 +6,7 @@ import javax.swing.plaf.basic.BasicBorders.RolloverButtonBorder;
 public class Character_Driver {
 
 	public static Scanner input = new Scanner(System.in);
-	
+	public static String[] statList = {"Strength", "Dexterity", "Constitution", "Intelligence","Wisdom","Charisma"};
 	public static void main(String[] args) {
 	
 	
@@ -17,41 +18,93 @@ public class Character_Driver {
 		}
 		
 		setStats(stats, Player);
-		
+		int[] selStats = {Player.getStr(), Player.getDex(), Player.getCon(), Player.getIntel(), Player.getWis(), Player.getCha()};
+		System.out.print("Your selected stats: ");
+		printStats(selStats);
 		
 	}
 	
 	
 	static void setStats(int[] stats, Stats player) {
 		System.out.println("Time to set your stats.");
+		int selection;
 		printStats(stats);
-		System.out.print("\nEnter a number 0-5 to set your Strength to that number: ");
-		int distro = input.nextInt();
-		player.setStr(stats[distro]);
-		int str = player.getStr();
-		System.out.print("Strength: " + str);
-		stats[distro] = 0;
-		System.out.println();
-		printStats(stats);
-		System.out.print("\nEnter a number 0-5 to set your Dexterity to that number: ");
-		distro = input.nextInt();
-		player.setDex(stats[distro]);
-		int dex = player.getDex();
-		System.out.print("Dexterity: " + dex);
-		stats[distro] = 0;
-		System.out.println();
+		ArrayList<Integer> selections = new ArrayList<Integer>();
+		for(int i =0;i<6;i++) {
+			selections.add(i);
+		}
+
+		
+		System.out.print("\nEnter ");
+		System.out.print(selections);
+		System.out.print(" to set your " + statList[0] + " to that selection: ");
+		selection = input.nextInt();
+		player.setStr(stats[selection]);
+		stats[selection] = 0;
+		selections.remove(Integer.valueOf(selection));
+		System.out.print(statList[0] + ": " + player.getStr() + "\n");
 		printStats(stats);
 		
+		System.out.print("\nEnter ");
+		System.out.print(selections);
+		System.out.print(" to set your " + statList[1] + " to that selection: ");
+		selection = input.nextInt();
+		player.setDex(stats[selection]);
+		stats[selection] = 0;
+		selections.remove(Integer.valueOf(selection));
+		System.out.print(statList[1] + ": " + player.getDex() + "\n");
+		printStats(stats);
+
+		System.out.print("\nEnter ");
+		System.out.print(selections);
+		System.out.print(" to set your " + statList[2] + " to that selection: ");
+		selection = input.nextInt();
+		player.setCon(stats[selection]);
+		stats[selection] = 0;
+		selections.remove(Integer.valueOf(selection));
+		System.out.print(statList[2] + ": " + player.getCon() + "\n");
+		printStats(stats);
+		
+		System.out.print("\nEnter ");
+		System.out.print(selections);
+		System.out.print(" to set your " + statList[3] + " to that selection: ");
+		selection = input.nextInt();
+		player.setIntel(stats[selection]);
+		stats[selection] = 0;
+		selections.remove(Integer.valueOf(selection));
+		System.out.print(statList[3] + ": " + player.getIntel() + "\n");
+		printStats(stats);
+		
+		System.out.print("\nEnter ");
+		System.out.print(selections);
+		System.out.print(" to set your " + statList[4] + " to that selection: ");
+		selection = input.nextInt();
+		player.setWis(stats[selection]);
+		stats[selection] = 0;
+		selections.remove(Integer.valueOf(selection));
+		System.out.print(statList[4] + ": " + player.getWis() + "\n");
+		printStats(stats);
+		
+		System.out.print("\nEnter ");
+		System.out.print(selections);
+		System.out.print(" to set your " + statList[5] + " to that selection: ");
+		selection = input.nextInt();
+		player.setCha(stats[selection]);
+		stats[selection] = 0;
+		selections.remove(Integer.valueOf(selection));
+		System.out.print(statList[5] + ": " + player.getCha() + "\n");
 	}
 
+	
+	
 
 	private static void printStats(int[] stats) {
 		for(int j=0;j<6;j++) {
 			System.out.print(stats[j] + " ");
 		}
-		
 	}
 
+	
 
 	private static int rollChar() {
 		int sum = 0;
