@@ -108,11 +108,39 @@ public class Stats {
 	public int getChaM() {
 		return chaM;
 	}
+	public void setStrM(int str) {
+		this.strM = findMod(str);
+	}
+
+	public void setDexM(int dex) {
+		this.dexM = findMod(dex);
+	}
+
+	public void setConM(int con) {
+		this.conM = findMod(con);
+	}
+
+	public void setIntelM(int intel) {
+		this.intelM = findMod(intel);
+	}
+
+	public void setWisM(int wis) {
+		this.wisM = findMod(wis);
+	}
+
+	public void setChaM(int cha) {
+		this.chaM = findMod(cha);
+	}
 
 
 	private int findMod(int stat) {
 		return ((stat-10)/2);	
 	}
+
+
+
+
+	
 	
 	
 }

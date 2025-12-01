@@ -9,8 +9,11 @@ public class Dice {
 		return result;
 	}
 	
-	public static int statRoll() {
-		int result = rand.nextInt(6)+1;
+	public static int multiRoll(int count, int sides) {
+		int result = 0;
+		for(int i =0; i < count;i++) {
+			result += rand.nextInt(sides)+1;
+		}
 		return result;
 	}
 	
